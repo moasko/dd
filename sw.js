@@ -1,5 +1,5 @@
 const CACHE_PREFIX = 'demo-pwa-';
-const CACHE_NAME = CACHE_PREFIX + 'v1';
+const CACHE_NAME = CACHE_PREFIX + 'v2';
 const APP_URL = new URL('./index.html', self.location).href;
 const ASSETS = ['./index.html', './manifest.json', './icone-sablier.svg', './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'];
 self.addEventListener('install', event => {
