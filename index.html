@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="manifest" href="./manifest.json" />
+  <meta name="theme-color" content="#ef3645" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="demo" />
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="./icons/icon-192.png" />
   <title>Compte Bancaire — DÉMO</title>
   <style>
     :root{
@@ -628,6 +634,15 @@
       });
       location.reload();
     });
+  </script>
+  <script>
+    if ('serviceWorker' in navigator && window.isSecureContext && location.protocol !== 'file:') {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(error => {
+          console.error('Impossible d’activer le mode hors ligne.', error);
+        });
+      });
+    }
   </script>
 </body>
 </html>
